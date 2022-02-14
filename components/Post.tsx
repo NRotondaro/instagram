@@ -1,4 +1,3 @@
-import { PostProps } from './Posts'
 import {
   BookmarkIcon,
   ChatIcon,
@@ -7,8 +6,15 @@ import {
   HeartIcon,
   PaperAirplaneIcon,
 } from '@heroicons/react/outline'
-import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid'
 import { useSession } from 'next-auth/react'
+
+interface PostProps {
+  id: string
+  username: string
+  userImg: string
+  img: string
+  caption: string
+}
 
 export const Post = ({ id, username, userImg, img, caption }: PostProps) => {
   const { data: session } = useSession()
